@@ -1,14 +1,21 @@
-public class ReverseString {
-    public static void main(String[] args) {
-        String originalString = "Vishnu";
-        String reversedString = reverseString(originalString);
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
 
-        System.out.println("Original string: " + originalString);
-        System.out.println("Reversed string: " + reversedString);
-    }
+public class HelloServlet extends HttpServlet {
 
-    public static String reverseString(String str) {
-        StringBuilder sb = new StringBuilder(str);
-        return sb.reverse().toString();
-    }
+  public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    response.setContentType("text/html");
+
+    PrintWriter out = response.getWriter();
+    out.println("<html>");
+    out.println("<head>");
+    out.println("<title>Hello, World!</title>");
+    out.println("</head>");
+    out.println("<body>");
+    out.println("<h1>Hello, World!</h1>");
+    out.println("<p>This is a sample Java website.</p>");
+    out.println("</body>");
+    out.println("</html>");
+  }
 }
